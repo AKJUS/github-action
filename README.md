@@ -14,7 +14,7 @@ This action's step needs to run after your test suite has outputted a coverage r
 
 | Name                         | Requirement | Description |
 | ---------------------------- | ----------- | ----------- |
-| `github-token`               | _required_ | Default if not specified: `${{ github.token }}`. Can also be specified this way: `github-token: ${{ secrets.GITHUB_TOKEN }}`; Coveralls uses this token to verify the appropriate repo at Coveralls and send any new status updates based on your coverage results. This variable is built into Github Actions, so __do not add it to your secrets store__. [More Info](https://help.github.com/en/actions/configuring-and-managing-workflows/authenticating-with-the-github_token)|
+| `github-token`               | _required_ | Default if not specified: `${{ github.token }}`. Can also be specified this way: `github-token: ${{ secrets.GITHUB_TOKEN }}`; Coveralls uses this token to verify the appropriate repo at Coveralls and send any new status updates based on your coverage results. This variable is built into GitHub Actions, so __do not add it to your secrets store__. [More Info](https://help.github.com/en/actions/configuring-and-managing-workflows/authenticating-with-the-github_token)|
 | `file`                       | _optional_ | Default: all coverage files that could be found. Local path to the coverage report file produced by your test suite. An error will be thrown if no file was found. This is the file that will be sent to the Coveralls API. Leave empty if you want to combine many files reports. |
 | `files`                      | _optional_ | Default: all coverage files that could be found. Space-separated list of coverage report files produced by your test suite. Example: `files: coverage/test1.lcov coverage/test2.lcov` |
 | `format`                     | _optional_ | Force coverage report format. If not specified, coveralls will try to detect the format based on file extension and/or content. Possible values: `lcov`, `simplecov`, `cobertura`, `jacoco`, `gcov`, `golang`, `python`. See also [supported coverage report formats list](https://github.com/coverallsapp/coverage-reporter#supported-coverage-report-formats). |
@@ -25,7 +25,7 @@ This action's step needs to run after your test suite has outputted a coverage r
 | `carryforward`               | _optional_ | Comma-separated flags used to carry forward results from previous builds if some of the parallel jobs are missing. Used only with `parallel-finished`. |
 | `coveralls-endpoint`         | _optional_ | Hostname and protocol: `https://<host>`; Specifies a [Coveralls Enterprise](https://enterprise.coveralls.io/) hostname. |
 | `allow-empty`                | _optional_ | Default: `false`. Don't fail if coverage report is empty or contains no coverage data. |
-| `base-path`                  | _optional_ | Path to the root folder of the project the coverage was collected in. Should be used in monorepos so that coveralls can process filenames from your coverage reports correctly (e.g. packages/my-subproject) |
+| `base-path`                  | _optional_ | Path to the root folder of the project where the coverage was collected. Should be used in monorepos so that coveralls can process filenames from your coverage reports correctly (e.g. packages/my-subproject) |
 | `git-branch`                 | _optional_ | Default: GITHUB_REF environment variable. Override the branch name. |
 | `git-commit`                 | _optional_ | Default: GITHUB_SHA environment variable. Override the commit SHA. |
 | `compare-ref`                | _optional_ | Branch name to compare coverage with. Specify if you want to always check coverage change for PRs against one branch. |
@@ -123,7 +123,7 @@ The "Coveralls Finished" step needs to run after all other steps have completed;
 
 ## Demo
 
-![demo](https://s3.amazonaws.com/assets.coveralls.io/Coveralls%20Github%20Action%20Demo%20-%20trimmed%20-%204.8x720.gif)
+![demo](https://s3.amazonaws.com/assets.coveralls.io/Coveralls%20GitHub%20Action%20Demo%20-%20trimmed%20-%204.8x720.gif)
 
 ### Steps shown:
 
@@ -167,13 +167,13 @@ Coveralls.io is always free for open-source projects!
 
 Create a [free account](https://coveralls.io/pricing) for your (public) repo at Coveralls, then use one of our [official integrations](https://docs.coveralls.io/integrations#official-integrations)—[coverage-reporter](https://github.com/coverallsapp/coverage-reporter), [github-action](https://github.com/coverallsapp/github-action) (this project!), or [orb](https://github.com/coverallsapp/orb)—to upload your coverage reports to the [Coveralls API](https://docs.coveralls.io/api-introduction).
 
-Additionally, over 30 [community-created language integrations](https://docs.coveralls.io/integrations#language-integrations) exist for Coveralls.io, which you can find [here](https://docs.coveralls.io/integrations#language-integrations).
+Additionally, over 30 [community-created language integrations](https://docs.coveralls.io/integrations#language-integrations) exist for Coveralls.io.
 
 ## Getting help
 
 [Get started](https://docs.coveralls.io/) with our [documentation here](https://docs.coveralls.io/).
 
-Issues or Questions? Reach out to us [here](https://github.com/coverallsapp/github-action/issues), or at support@coveralls.io.
+Issues or Questions? Reach out to us using [GitHub issues](https://github.com/coverallsapp/github-action/issues), or at support@coveralls.io.
 
 ## Contributing
 
